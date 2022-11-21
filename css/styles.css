@@ -91,6 +91,8 @@ header {
   font-size: 14px;
   line-height: 1.1428;
   letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-nav a:hover,
 .site-nav a:focus {
@@ -98,6 +100,20 @@ header {
 }
 .site-nav .current {
   color: var(--accent-color);
+  position: relative;
+}
+.site-nav .current::after {
+  content: '';
+  position: absolute;
+  top: 48px;
+  left: 0;
+  transform: translate(0, -50%);
+
+  width: 100%;
+  height: 4px;
+
+  background: #2196f3;
+  border-radius: 2px;
 }
 .auth-nav {
   display: flex;
@@ -114,6 +130,8 @@ header {
   font-size: 14px;
   line-height: 1.1428;
   letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .auth-nav .button:hover,
 .auth-nav .button:focus {
@@ -177,6 +195,8 @@ header {
   letter-spacing: 0.06em;
   background-color: var(--accent-color);
   cursor: pointer;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero .button:hover,
 .hero .button:focus {
@@ -318,6 +338,8 @@ header {
   align-items: center;
   justify-content: center;
   color: #afb1b8;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:hover,
 .social-link:focus {
@@ -348,6 +370,8 @@ header {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   color: #afb1b8;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -427,6 +451,7 @@ footer .logo {
 }
 .address-list a {
   color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-list a:hover,
 .address-list a:focus {
@@ -475,6 +500,8 @@ footer .logo {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   color: #ffffff;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-join-link:hover,
 .footer-join-link:focus {
@@ -495,6 +522,8 @@ footer .logo {
 }
 .portfolio .button {
   padding: 6px 22px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio .button:hover,
 .portfolio .button:focus {
@@ -530,40 +559,25 @@ footer .logo {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-/* .portfolio-link:hover .portfolio-link-img::before {
-  opacity: 1;
-} */
-.portfolio-link:hover .portfolio-link-img-hover {
-  opacity: 1;
+.portfolio-link:hover .portfolio-link-hover,
+.portfolio-link:focus .portfolio-link-hover {
+  transform: translateY(-100%);
 }
 .portfolio-link-img {
   position: relative;
+  overflow: hidden;
 }
-/* .portfolio-link-img::before {
-  content: '';
+.portfolio-link-hover {
   position: absolute;
-  opacity: 0;
-
-  width: 100%;
-  height: 100%;
-  padding: 63px 24px;
-
-  background: rgba(33, 150, 243, 0.9);
-  font-size: 18px;
-  line-height: 1.5555;
-  letter-spacing: 0.03em;
-
-  color: #ffffff;
-} */
-.portfolio-link-img-hover {
-  position: absolute;
-  top: 0;
+  top: 100%;
   left: 0;
-  opacity: 0;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 100%;
-  padding: 63px 24px;
+  padding: 0 24px;
 
   background: rgba(33, 150, 243, 0.9);
   font-size: 18px;
@@ -572,6 +586,7 @@ footer .logo {
 
   color: #ffffff;
 }
+
 .portfolio-item-about {
   background: #ffffff;
 
